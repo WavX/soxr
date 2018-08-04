@@ -126,6 +126,11 @@ if (WITH_CR64S)
   set (WITH_CR64S ${SIMD64_FOUND})
 endif ()
 
+if (CMAKE_HOST_SOLARIS)
+	set(WITH_CR32S FALSE)
+	set(WITH_CR64S FALSE)
+endif ()
+
 if (WITH_AVFFT)
   find_package (LibAVCodec REQUIRED)
   if (AVCODEC_FOUND)
