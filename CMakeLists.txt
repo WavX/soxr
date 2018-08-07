@@ -129,6 +129,7 @@ endif ()
 if (CMAKE_HOST_SOLARIS)
 	set(WITH_CR32S FALSE)
 	set(WITH_CR64S FALSE)
+	set (LIBS ${LIBS} -lrt)
 endif ()
 
 if (WITH_AVFFT)
