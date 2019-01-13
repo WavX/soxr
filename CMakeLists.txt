@@ -205,6 +205,8 @@ endif ()
 
 # Build configuration:
 
+set (CMAKE_MAKE_PROGRAM "${MAKE}")
+
 if (${BUILD_SHARED_LIBS} AND ${CMAKE_SYSTEM_NAME} STREQUAL Windows)
   # Allow exes to find dlls:
   set (BIN ${PROJECT_BINARY_DIR}/bin/)
