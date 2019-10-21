@@ -7,7 +7,7 @@
 #define COEFS ((sample_t const *)p->coefs)
 
 #if SIMD_SSE
-  #define BEGINNING v4_t sum, q1, q2, t
+  #define BEGINNING v4_t sum = vZero(), q1, q2, t
   #define ____ \
     q1 = _mm_shuffle_ps(t=vLdu(input+2*j),vLdu(input+2*j+4),_MM_SHUFFLE(3,1,3,1)); \
     q2 = _mm_shuffle_ps(vLdu(input-2*j-4),vLdu(input-2*j-8),_MM_SHUFFLE(1,3,1,3)); \

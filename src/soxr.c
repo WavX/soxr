@@ -675,7 +675,7 @@ static size_t soxr_output_no_callback(soxr_t p, soxr_buf_t out, size_t len)
   size_t done = 0;
   bool separated = !!(p->io_spec.otype & SOXR_SPLIT);
 #if defined _OPENMP
-  int i;
+  int i = 0;
   if (!p->runtime_spec.num_threads && p->num_channels > 1)
 #pragma omp parallel for
   for (i = 0; i < (int)p->num_channels; ++i) {
@@ -776,7 +776,7 @@ soxr_error_t soxr_process(soxr_t p,
     idone = ilen;
   else if (p->io_spec.itype & p->io_spec.otype & SOXR_SPLIT) { /* Both i & o */
 #if defined _OPENMP
-    int i;
+    int i = 0;
     if (!p->runtime_spec.num_threads && p->num_channels > 1)
 #pragma omp parallel for
     for (i = 0; i < (int)p->num_channels; ++i) {
