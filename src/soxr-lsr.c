@@ -10,12 +10,12 @@
 #include "rint.h"
 
 
-
+/*
 SRC_STATE *src_new(SRC_SRCTYPE id, int channels, SRC_ERROR * error)
 {
   return src_callback_new(0, id, channels, error, 0);
 }
-
+*/
 
 
 SRC_ERROR src_process(SRC_STATE *p, SRC_DATA * io)
@@ -65,7 +65,7 @@ SRC_STATE * src_delete(SRC_STATE * p)
 }
 
 
-
+/*
 SRC_STATE *src_callback_new(src_callback_t fn,
     SRC_SRCTYPE id, int channels, SRC_ERROR * error0, void * p)
 {
@@ -86,7 +86,7 @@ SRC_STATE *src_callback_new(src_callback_t fn,
 
   return soxr;
 }
-
+*/
 
 
 long src_callback_read(SRC_STATE *p, double oi_ratio, long olen, float * obuf)
